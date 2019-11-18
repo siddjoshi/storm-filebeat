@@ -8,8 +8,8 @@ ENV    ELASTICSERVERS=localhost:9200 \
 
 COPY filebeat.yml /usr/share/filebeat/filebeat.yml
 USER root
-RUN chown root:filebeat /usr/share/filebeat/filebeat.yml
-
+RUN chown root:root /usr/share/filebeat/filebeat.yml
+RUN chown -R root:root /usr/share/filebeat/*
 #RUN yum -y update
 
 #RUN rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
@@ -21,7 +21,7 @@ RUN chown root:filebeat /usr/share/filebeat/filebeat.yml
 #COPY filebeat.yml /etc/filebeat/filebeat.yml
 
 COPY docker-entrypoint.sh /
-
+COPY docker-entrypoint.sh /usr/local/bin/
 #RUN chmod -R 777  /var/lib
 
 #RUN mkdir /var/lib/filebeat
@@ -33,8 +33,9 @@ COPY docker-entrypoint.sh /
 #WORKDIR /etc/filebeat
 
 RUN ["chmod", "+x", "/docker-entrypoint.sh"]
+RUN ["chmod", "+x", "/usr/local/bin/docker-entrypoint.sh"]
 
 ##USER filebeat
-ENTRYPOINT ["sh", "/docker-entrypoint.sh"]
+ENTRYPOINT ["docker-entrypoint.sh"]
 
 #CMD ["filebeat", "-c /etc/filebeat/filebeat.yml"]
