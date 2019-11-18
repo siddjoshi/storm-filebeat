@@ -1,4 +1,4 @@
-from centos:7
+FROM centos:7
 
 ##ENV elasticserver=localhost:9200
 
