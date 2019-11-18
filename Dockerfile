@@ -22,4 +22,4 @@ WORKDIR /etc/filebeat
 RUN ["chmod", "+x", "/docker-entrypoint.sh"]
 ENTRYPOINT ["sh", "/docker-entrypoint.sh"]
 
-CMD [ "" ]
+CMD ["filebeat", "-c /etc/filebeat/filebeat.yml"]
