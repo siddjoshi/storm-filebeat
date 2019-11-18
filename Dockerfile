@@ -23,6 +23,8 @@ RUN mkdir /var/lib/filebeat
 
 RUN chmod -R 777 /var/lib/filebeat
 
+USER root
+
 WORKDIR /etc/filebeat
 
 RUN ["chmod", "+x", "/docker-entrypoint.sh"]
