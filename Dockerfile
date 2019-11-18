@@ -17,7 +17,11 @@ COPY filebeat.yml /etc/filebeat/filebeat.yml
 
 COPY docker-entrypoint.sh /
 
-RUN chmod -R 777  /var/lib 
+RUN chmod -R 777  /var/lib
+
+RUN mkdir /var/lib/filebeat
+
+RUN chmod -R 777 /var/lib/filebeat
 
 WORKDIR /etc/filebeat
 
