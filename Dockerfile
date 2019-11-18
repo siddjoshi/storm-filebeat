@@ -34,7 +34,7 @@ COPY docker-entrypoint.sh /
 
 RUN ["chmod", "+x", "/docker-entrypoint.sh"]
 
-USER filebeat
+##USER filebeat
 ENTRYPOINT ["sh", "/docker-entrypoint.sh"]
 
 #CMD ["filebeat", "-c /etc/filebeat/filebeat.yml"]
