@@ -3,7 +3,7 @@ FROM centos:7
 ENV    ELASTICSERVERS=localhost:9200 \
        USERNAME=elastic \
        PASSWORD=password \
-       ZDEPLOYMENT=QA
+       DEPLOYMENT=QA
 
 RUN yum -y update
 
