@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-elastc=$ELASTICSERVERS
+elastic=$ELASTICSERVERS
 usern=$USERNAME
 passwd=$PASSWORD
 setup=$DEPLOYMENT

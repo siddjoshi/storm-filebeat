@@ -1,6 +1,9 @@
 FROM centos:7
 
-##ENV elasticserver=localhost:9200
+ENV    ELASTICSERVERS=localhost:9200 \
+       USERNAME=elastic \
+       PASSWORD=password \
+       ZDEPLOYMENT=QA
 
 RUN yum -y update
 
