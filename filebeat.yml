@@ -49,7 +49,7 @@ filebeat.inputs:
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
-    - /usr/hdp/current/zookeeper-server/logs/*.log
+    - /usr/hdp/3.1.0.0-78/zookeeper/logs/*.log
   fields:
     logtype: zookeeper
     environment: change_environment
