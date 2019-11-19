@@ -10,7 +10,8 @@ COPY filebeat.yml /usr/share/filebeat/filebeat.yml
 USER root
 RUN chown root:root /usr/share/filebeat/filebeat.yml
 RUN chown -R root:root /usr/share/filebeat/*
-RUN chmod -r 777 /usr/share/filebeat/
+RUN chmod -R 777 /usr/share/filebeat
+##RUN chmod go-w /usr/share/filebeat/filebeat.yml
 #RUN yum -y update
 
 #RUN rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch

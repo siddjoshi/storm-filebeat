@@ -18,5 +18,6 @@ sed -i 's/change_password/'$passwd'/g' /usr/share/filebeat/filebeat.yml
 ##change Environemnt
 sed -i 's/change_environment/'$setup'/g' /usr/share/filebeat/filebeat.yml
 
+chmod go-w /usr/share/filebeat/filebeat.yml
 ## Run Filebeat
 filebeat -c /usr/share/filebeat/filebeat.yml
